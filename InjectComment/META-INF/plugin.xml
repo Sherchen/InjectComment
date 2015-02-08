@@ -1,0 +1,53 @@
+<idea-plugin version="2">
+  <id>com.sherchen.idea.plugin.injectcomment</id>
+  <name>Sherchen.InjectComment</name>
+  <version>1.0</version>
+  <vendor email="ncuboy045wsq@gmail.com" url="http://www.yourcompany.com">Sherchen</vendor>
+
+  <description><![CDATA[
+      The plugin is used for cooperation, when A write some code, then B want to change the code,
+      then the comment will enwrap the selected code.we can add some good comment to tell others why we change
+      the code.
+      .<br>
+      <!--<em>most HTML tags may be used</em>-->
+    ]]></description>
+
+  <change-notes><![CDATA[
+      The initial version.<br>
+      <!--<em>most HTML tags may be used</em>-->
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="InjectComment" class="com.sherchen.idea_plugin.injectcomment.InjectComment"
+              text="InjectYourComment" description="This is intimated by my daily work">
+          <add-to-group group-id="GenerateGroup" anchor="last"/>
+      </action>
+  </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable instance="com.sherchen.idea_plugin.injectcomment.Setting" />
+    </extensions>
+</idea-plugin>
